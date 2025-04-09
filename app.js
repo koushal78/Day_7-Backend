@@ -2,6 +2,8 @@ const express = require('express')
 const cors = require('cors')
 const fs= require('fs/promises')
 const app = express()
+
+
 let users =[];
 app.use(express.json())
 app.use(cors())
@@ -56,6 +58,7 @@ app.delete('/users/:id',(req,res) => {
         res.status(200).json({message: 'user deleted successfully',data: users[userIndex]});
     }  
 })
-app.listen(9000,()=>{
-    console.log('Server is running on port 9000')
-});
+// app.listen(9000,()=>{
+//     console.log('Server is running on port 9000')
+// });
+module.exports.app;
